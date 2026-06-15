@@ -1,0 +1,2117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anuya Vijayan | Content Engineer Portfolio</title>
+    <meta name="description"
+        content="Portfolio of Anuya Vijayan - Content Engineer. Helping AI Models become better communicators and content creators .">
+
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* CSS Reset & Variables */
+        :root {
+            --primary: #1A1A1A;
+            --secondary: #666666;
+            --accent: #7C6FF7;
+            --accent-hover: #6759E3;
+            --accent-soft: rgba(124, 111, 247, 0.08);
+            --accent-soft-hover: rgba(124, 111, 247, 0.15);
+            --background: #FFFFFF;
+            --bg-secondary: #F8F9FA;
+            --border: rgba(0, 0, 0, 0.08);
+            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            --card-shadow-hover: 0 12px 30px rgba(124, 111, 247, 0.1);
+            --transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --font-family: 'Inter', sans-serif;
+            --container-padding: 2rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--background);
+            color: var(--primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Reusable Components & Typography */
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        p {
+            color: var(--secondary);
+            font-size: 1rem;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        .section {
+            padding: 8rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--secondary);
+            max-width: 600px;
+            margin-bottom: 4rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.8rem 1.6rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 8px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: var(--transition);
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: #FFFFFF;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(124, 111, 247, 0.25);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--accent-soft);
+            transform: translateY(-2px);
+        }
+
+        .btn-text {
+            color: var(--accent);
+            font-weight: 600;
+            padding: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        .btn-text i {
+            transition: var(--transition);
+        }
+
+        .btn-text:hover i {
+            transform: translateX(4px);
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            height: 70px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .logo {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--secondary);
+            position: relative;
+            padding: 0.25rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Mobile Nav Drawer */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--background);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+            transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .mobile-nav.open {
+            right: 0;
+        }
+
+        .mobile-nav a {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .mobile-nav a:hover,
+        .mobile-nav a.active {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+            background-color: var(--background);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-tagline {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4.2rem);
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-bio {
+            font-size: 1.15rem;
+            color: var(--secondary);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .hero-avatar-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .avatar-circle {
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-soft) 0%, rgba(124, 111, 247, 0.15) 100%);
+            border: 4px solid var(--accent-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: var(--card-shadow);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .avatar-initials {
+            font-size: 5rem;
+            font-weight: 800;
+            color: var(--accent);
+            letter-spacing: -0.05em;
+        }
+
+        .avatar-decorator {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            bottom: 20px;
+            right: 20px;
+            border: 4px solid #FFFFFF;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Work Section (UXfol.io Style) */
+        .work {
+            background-color: var(--bg-secondary);
+        }
+
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background-color: var(--background);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .project-banner {
+            height: 240px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        /* CSS-only Mockup layouts inside Banners for rich premium design */
+        .project-card:nth-child(1) .project-banner {
+            background: linear-gradient(135deg, #7C6FF7 0%, #A59BFF 100%);
+        }
+
+        .project-card:nth-child(2) .project-banner {
+            background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);
+        }
+
+        .project-card:nth-child(3) .project-banner {
+            background: linear-gradient(135deg, #EC4899 0%, #F472B6 100%);
+        }
+
+        .project-card:nth-child(4) .project-banner {
+            background: linear-gradient(135deg, #10B981 0%, #34D399 100%);
+        }
+
+        .banner-graphic {
+            width: 75%;
+            height: 70%;
+            background-color: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            border-radius: 12px 12px 0 0;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            margin-top: 3.5rem;
+            position: relative;
+            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover .banner-graphic {
+            transform: scale(1.05) translateY(-5px);
+        }
+
+        /* Mockup Topbar styling */
+        .mockup-header {
+            height: 18px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            display: flex;
+            align-items: center;
+            padding: 0 8px;
+            gap: 4px;
+        }
+
+        .mockup-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .mockup-body {
+            flex-grow: 1;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .mockup-line {
+            height: 6px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 3px;
+        }
+
+        .mockup-line.short {
+            width: 60%;
+        }
+
+        .mockup-line.medium {
+            width: 85%;
+        }
+
+        .mockup-circle {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            margin-bottom: 4px;
+        }
+
+        .project-info {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            background-color: var(--bg-secondary);
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .project-card:hover .tag {
+            background-color: var(--accent-soft);
+            color: var(--accent);
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary);
+        }
+
+        .project-description {
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 5rem;
+        }
+
+        .about-bio {
+            margin-bottom: 2.5rem;
+        }
+
+        .about-bio p {
+            margin-bottom: 1.25rem;
+            font-size: 1.05rem;
+        }
+
+        .skills-container h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-pill {
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            background-color: var(--background);
+            border: 1px solid var(--border);
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .skill-pill:hover {
+            border-color: var(--accent);
+            background-color: var(--accent-soft);
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 6px;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: calc(-2rem - 6px);
+            top: 6px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: var(--background);
+            border: 3px solid var(--accent);
+            transition: var(--transition);
+        }
+
+        .timeline-item:hover .timeline-dot {
+            background-color: var(--accent);
+            transform: scale(1.2);
+            box-shadow: 0 0 10px rgba(124, 111, 247, 0.4);
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-role {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-company {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-desc {
+            font-size: 0.95rem;
+        }
+
+        /* Articles Section */
+        .articles {
+            background-color: var(--bg-secondary);
+        }
+
+        .articles-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .articles-header .section-info {
+            max-width: 600px;
+        }
+
+        .articles-header .section-subtitle {
+            margin-bottom: 0;
+        }
+
+        /* Medium Username Input Field */
+        .username-picker {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--background);
+            border: 1px solid var(--border);
+            padding: 0.4rem 0.6rem;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+
+        .username-picker:focus-within {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-soft);
+        }
+
+        .username-prefix {
+            font-weight: 600;
+            color: var(--secondary);
+            font-size: 0.9rem;
+            user-select: none;
+        }
+
+        .username-input {
+            border: none;
+            outline: none;
+            font-family: var(--font-family);
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--primary);
+            width: 140px;
+        }
+
+        .btn-sync {
+            padding: 0.4rem 0.8rem;
+            font-size: 0.8rem;
+            background-color: var(--accent);
+            color: #FFFFFF;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .btn-sync:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            min-height: 300px;
+        }
+
+        .article-card {
+            background-color: var(--background);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        .article-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .article-thumb-container {
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+            background-color: #ECECEC;
+        }
+
+        .article-thumb {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .article-card:hover .article-thumb {
+            transform: scale(1.05);
+        }
+
+        .article-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.75rem;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .article-date-dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: var(--border);
+        }
+
+        .article-title {
+            font-size: 1.15rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 2.8em;
+            line-height: 1.4;
+        }
+
+        .article-excerpt {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.5;
+        }
+
+        /* Dynamic States & Skeleton */
+        .fallback-message {
+            grid-column: 1 / -1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 2rem;
+            background-color: var(--background);
+            border-radius: 12px;
+            border: 1px dashed var(--border);
+        }
+
+        .fallback-message i {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .fallback-message h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .fallback-message p {
+            font-size: 0.95rem;
+            max-width: 400px;
+            margin-bottom: 1.5rem;
+        }
+
+        .skeleton-card {
+            background-color: var(--background);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            height: 420px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .skeleton-img {
+            height: 180px;
+            background: linear-gradient(90deg, #F0F0F0 25%, #E0E0E0 50%, #F0F0F0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        .skeleton-text-container {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .skeleton-line {
+            height: 12px;
+            background: linear-gradient(90deg, #F0F0F0 25%, #E0E0E0 50%, #F0F0F0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            border-radius: 4px;
+        }
+
+        .skeleton-line.meta {
+            width: 50%;
+            height: 10px;
+        }
+
+        .skeleton-line.title {
+            width: 90%;
+            height: 18px;
+        }
+
+        .skeleton-line.title-short {
+            width: 60%;
+            height: 18px;
+        }
+
+        .skeleton-line.desc-1 {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .skeleton-line.desc-2 {
+            width: 95%;
+        }
+
+        .skeleton-line.desc-3 {
+            width: 70%;
+        }
+
+        .skeleton-line.btn {
+            width: 110px;
+            height: 32px;
+            margin-top: auto;
+        }
+
+        @keyframes loading {
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 5rem;
+        }
+
+        .contact-info-block {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-icon-wrapper {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background-color: var(--accent-soft);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-method-detail h4 {
+            font-size: 1.05rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-method-detail p {
+            font-size: 0.95rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            background-color: var(--background);
+            transition: var(--transition);
+        }
+
+        .social-icon:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+            background-color: var(--accent-soft);
+            transform: translateY(-3px);
+        }
+
+        /* Contact Form (Polished bottom line inputs) */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.8rem 0;
+            border: none;
+            border-bottom: 2px solid var(--border);
+            background: transparent;
+            outline: none;
+            font-family: var(--font-family);
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .form-label {
+            position: absolute;
+            left: 0;
+            top: 0.8rem;
+            font-size: 1rem;
+            color: var(--secondary);
+            font-weight: 500;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+
+        /* Float Label animations */
+        .form-input:focus~.form-label,
+        .form-input:not(:placeholder-shown)~.form-label {
+            top: -1.2rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .form-input:focus {
+            border-bottom-color: var(--accent);
+        }
+
+        .form-group::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: var(--transition);
+            transform: translateX(-50%);
+        }
+
+        .form-group:focus-within::after {
+            width: 100%;
+        }
+
+        textarea.form-input {
+            min-height: 120px;
+            resize: none;
+        }
+
+        .form-status {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            display: none;
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+        }
+
+        .form-status.success {
+            display: block;
+            background-color: rgba(16, 185, 129, 0.08);
+            color: #10B981;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .form-status.error {
+            display: block;
+            background-color: rgba(239, 68, 68, 0.08);
+            color: #EF4444;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+
+        /* Footer */
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 0;
+            background-color: var(--background);
+        }
+
+        .footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .footer-copyright {
+            font-size: 0.9rem;
+            color: var(--secondary);
+        }
+
+        .footer-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .footer-link {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .footer-link:hover {
+            color: var(--accent);
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social-icon {
+            color: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .footer-social-icon:hover {
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Scroll Top Button */
+        .btn-scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background-color: var(--accent);
+            color: #FFFFFF;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(124, 111, 247, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 900;
+        }
+
+        .btn-scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .btn-scroll-top:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-3px);
+        }
+
+        /* Scroll-reveal effect classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) {
+            .section {
+                padding: 6rem 0;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 3rem;
+            }
+
+            .hero-avatar-container {
+                order: -1;
+            }
+
+            .avatar-circle {
+                width: 200px;
+                height: 200px;
+            }
+
+            .avatar-initials {
+                font-size: 4rem;
+            }
+
+            .hero-ctas {
+                justify-content: center;
+            }
+
+            .work-grid {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+
+            .articles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --container-padding: 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .articles-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .articles-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.5rem;
+            }
+
+            .footer .container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N24X7V9" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+    <!-- Header / Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                anuya<span>.</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#work" class="nav-link-item">Work</a></li>
+                <li><a href="#about" class="nav-link-item">About</a></li>
+                <li><a href="#articles" class="nav-link-item">Articles</a></li>
+                <li><a href="#contact" class="nav-link-item">Contact</a></li>
+            </ul>
+
+            <button class="mobile-menu-toggle" aria-label="Toggle Navigation menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <ul class="mobile-nav" id="mobile-nav">
+        <li><a href="#work" class="mobile-nav-item">Work</a></li>
+        <li><a href="#about" class="mobile-nav-item">About</a></li>
+        <li><a href="#articles" class="mobile-nav-item">Articles</a></li>
+        <li><a href="#contact" class="mobile-nav-item">Contact</a></li>
+    </ul>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section (UXfol.io Inspired Style) -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <div class="hero-tagline">Content Engineer</div>
+                        <h1 class="hero-title">Anuya Vijayan, Content Engineer</h1>
+                        <p class="hero-bio">
+                            With a background in content development, I combine technical understanding with a strong
+                            interest in AI and content engineering. I’m particularly drawn to interdisciplinary work,
+                            where language, technology, and communication intersect.
+                        </p>
+                        <div class="hero-ctas">
+                            <a href="#work" class="btn btn-primary">
+                                View Work
+                                <i data-lucide="arrow-right"></i>
+                            </a>
+                            <a href="#contact" class="btn btn-secondary">Let's chat!</a>
+                        </div>
+                    </div>
+
+                    <div class="hero-avatar-container">
+                        <div class="avatar-circle">
+                            <span class="avatar-initials">AV</span>
+                            <div class="avatar-decorator"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Section (Adapted from Iza's live projects) -->
+        <section class="section work" id="work">
+            <div class="container">
+                <h2 class="section-title reveal">Featured Projects</h2>
+                <p class="section-subtitle reveal">A curation of content engineering, prompt architecture, and
+                    documentation systems created to bridge user needs and programmatic design.</p>
+
+                <div class="work-grid">
+                    <!-- Project 1: Glossario -->
+                    <div class="project-card reveal">
+                        <div class="project-banner">
+                            <!-- Dictionary Layout -->
+                            <div class="banner-graphic">
+                                <div class="mockup-header">
+                                    <span class="mockup-dot"></span>
+                                    <span class="mockup-dot"></span>
+                                    <span class="mockup-dot"></span>
+                                </div>
+                                <div class="mockup-body" style="gap: 12px;">
+                                    <!-- Search input mockup -->
+                                    <div class="mockup-line"
+                                        style="width: 100%; height: 24px; border: 1px solid rgba(255,255,255,0.4); background-color: rgba(255,255,255,0.1); border-radius: 4px; display: flex; align-items: center; padding: 0 8px;">
+                                        <div class="mockup-dot"
+                                            style="width: 8px; height: 8px; background-color: rgba(255,255,255,0.6);">
+                                        </div>
+                                    </div>
+                                    <!-- Dictionary definitions mockup -->
+                                    <div style="display: flex; gap: 8px; align-items: center;">
+                                        <div class="mockup-circle" style="width: 24px; height: 24px;"></div>
+                                        <div class="mockup-line medium" style="height: 10px;"></div>
+                                    </div>
+                                    <div class="mockup-line" style="height: 6px; width: 95%;"></div>
+                                    <div class="mockup-line short" style="height: 6px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="tag">UX</span>
+                                <span class="tag">UI</span>
+                                <span class="tag">Material Design 3</span>
+                            </div>
+                            <h3 class="project-title">Glossario, an app for crowdsourcing glossary entries</h3>
+                            <p class="project-description">Designed and tested a Material 3 prototype that helps users
+                                find, contribute, and export glossary entries for unfamiliar contexts.</p>
+                            <button class="btn-text">
+                                View Project
+                                <i data-lucide="arrow-up-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: 696 Jewelry -->
+                    <div class="project-card reveal">
+                        <div class="project-banner">
+                            <!-- E-commerce Store Grid Layout -->
+                            <div class="banner-graphic">
+                                <div class="mockup-header">
+                                    <span class="mockup-dot"></span>
+                                    <span class="mockup-dot"></span>
+                                    <span class="mockup-dot"></span>
+                                </div>
+                                <div class="mockup-body"
+                                    style="padding: 10px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+                                    <!-- Store items grid -->
+                                    <div
+                                        style="background-color: rgba(255,255,255,0.15); border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 6px;">
+                                        <div class="mockup-circle"
+                                            style="width: 20px; height: 20px; margin-bottom: 4px;"></div>
+                                        <div class="mockup-line" style="width: 60%; height: 4px;"></div>
+                                    </div>
+                                    <div
+                                        style="background-color: rgba(255,255,255,0.15); border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 6px;">
+                                        <div class="mockup-circle"
+                                            style="width: 20px; height: 20px; margin-bottom: 4px;"></div>
+                                        <div class="mockup-line" style="width: 70%; height: 4px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="tag">UI</span>
+                                <span class="tag">Redesign</span>
+                            </div>
+                            <h3 class="project-title">696 Jewelry, Letting the Brand Finally Shine</h3>
+                            <p class="project-description">Redesigned 696jewelry.com to better express the brand’s
+                                character and help shoppers browse and buy with confidence. Built during the Design
+                                Practice PL Digital Designer course.</p>
+                            <button class="btn-text">
+                                View Project
+                                <i data-lucide="arrow-up-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Dojo -->
+                    <div class="project-card reveal">
+                        <div class="project-banner">
+                            <!-- AI Assistant Chat Layout -->
+                            <div class="banner-graphic">
+                                <div class="mockup-header">
+                                    <span class="mockup-dot"></span>
+                                    <span class="mockup-dot"></span>
+                                    <span class="mockup-dot"></span>
+                                </div>
+                                <div class="mockup-body"
+                                    style="padding: 12px 10px; display: flex; flex-direction: column; gap: 8px;">
+                                    <!-- Conversational message bubbles -->
+                                    <div
+                                        style="align-self: flex-start; max-width: 70%; background-color: rgba(255,255,255,0.25); border-radius: 12px 12px 12px 0; padding: 6px; display: flex; flex-direction: column; gap: 4px;">
+                                        <div class="mockup-line" style="width: 50px; height: 4px;"></div>
+                                        <div class="mockup-line" style="width: 80px; height: 4px;"></div>
+                                    </div>
+                                    <div
+                                        style="align-self: flex-end; max-width: 70%; background-color: rgba(124, 111, 247, 0.4); border-radius: 12px 12px 0 12px; padding: 6px; display: flex; flex-direction: column; gap: 4px; border: 1px solid rgba(255,255,255,0.15);">
+                                        <div class="mockup-line"
+                                            style="width: 60px; height: 4px; background-color: #ffffff;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="tag">UX</span>
+                                <span class="tag">UI</span>
+                                <span class="tag">Design system</span>
+                            </div>
+                            <h3 class="project-title">Dōjō, university assistant</h3>
+                            <p class="project-description">I designed a prototype of a digital assistant for students
+                                and staff that simplifies access to information and administrative tasks. As part of a
+                                four-person team, I ensured consistency of over 20 user stories.</p>
+                            <button class="btn-text">
+                                View Project
+                                <i data-lucide="arrow-up-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Chronos (Content Pipeline Documentation) -->
+                    <div class="project-card reveal">
+                        <div class="project-banner">
+                            <!-- Documentation Portal Layout -->
+                            <div class="banner-graphic">
+                                <div class="mockup-header">
+                                    <span class="mockup-dot"></span>
+                                    <span class="mockup-dot"></span>
+                                    <span class="mockup-dot"></span>
+                                </div>
+                                <div class="mockup-body"
+                                    style="padding: 0; display: flex; flex-direction: row; height: 100%;">
+                                    <!-- Sidebar navigation -->
+                                    <div
+                                        style="width: 25%; background-color: rgba(255,255,255,0.1); border-right: 1px solid rgba(255,255,255,0.15); display: flex; flex-direction: column; gap: 6px; padding: 12px 6px;">
+                                        <div class="mockup-line" style="width: 80%; height: 3px;"></div>
+                                        <div class="mockup-line" style="width: 65%; height: 3px;"></div>
+                                        <div class="mockup-line" style="width: 75%; height: 3px;"></div>
+                                    </div>
+                                    <!-- Docs content body -->
+                                    <div
+                                        style="flex-grow: 1; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
+                                        <div class="mockup-line medium"
+                                            style="height: 6px; width: 60%; margin-bottom: 4px;"></div>
+                                        <div class="mockup-line" style="height: 4px; width: 100%;"></div>
+                                        <div class="mockup-line" style="height: 4px; width: 95%;"></div>
+                                        <div class="mockup-line" style="height: 4px; width: 40%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="tag">Docs</span>
+                                <span class="tag">Static Site</span>
+                                <span class="tag">CMS</span>
+                            </div>
+                            <h3 class="project-title">Chronos, Technical Documentation Platform</h3>
+                            <p class="project-description">A modern developer portal docs structure utilizing markdown
+                                content pipelines, automated metadata auditing, and seamless search indexes for APIs.
+                            </p>
+                            <button class="btn-text">
+                                View Project
+                                <i data-lucide="arrow-up-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section about" id="about">
+            <div class="container">
+                <h2 class="section-title reveal">About Me</h2>
+                <div class="about-grid">
+
+                    <!-- Bio & Skills (Left) -->
+                    <div class="reveal">
+                        <div class="about-bio">
+                            <p>
+                                I am a passionate creator bridging the gap between product strategy, design systems, and
+                                software engineering. I believe design is not just how things look, but deeply about how
+                                they function.
+                            </p>
+                            <p>
+                                Over the last 5+ years, I have worked with start-ups and tech companies to craft
+                                responsive websites and complex interfaces. My work focuses on accessibility, smooth
+                                interactions, and clean layout patterns.
+                            </p>
+                        </div>
+
+                        <div class="skills-container">
+                            <h3>Skills &amp; Toolkit</h3>
+                            <div class="skill-pills">
+                                <span class="skill-pill">Content Engineering</span>
+                                <span class="skill-pill">UX/UI Design</span>
+                                <span class="skill-pill">Technical Writing</span>
+                                <span class="skill-pill">Information Architecture</span>
+                                <span class="skill-pill">HTML5 &amp; CSS3</span>
+                                <span class="skill-pill">JavaScript (ES6+)</span>
+                                <span class="skill-pill">Prompt Engineering</span>
+                                <span class="skill-pill">Figma</span>
+                                <span class="skill-pill">Design Systems</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience Timeline (Right) -->
+                    <div class="reveal">
+                        <div class="timeline">
+                            <!-- Job 1 -->
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-date">2024 - Present</div>
+                                <h4 class="timeline-role">Lead Product Designer</h4>
+                                <div class="timeline-company">TechCorp</div>
+                                <p class="timeline-desc">Leading a team of 4 designers working on core analytics
+                                    software, aligning engineering constraints with interactive visuals.</p>
+                            </div>
+
+                            <!-- Job 2 -->
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-date">2022 - 2024</div>
+                                <h4 class="timeline-role">Senior UX Designer</h4>
+                                <div class="timeline-company">InnovateLab</div>
+                                <p class="timeline-desc">Crafted interactive prototypes, set up design standards, and
+                                    conducted over 40 structured user usability studies.</p>
+                            </div>
+
+                            <!-- Job 3 -->
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-date">2020 - 2022</div>
+                                <h4 class="timeline-role">UX/UI Designer</h4>
+                                <div class="timeline-company">WebCraft Studio</div>
+                                <p class="timeline-desc">Shipped custom layouts, e-commerce landing pages, and
+                                    responsive applications for global client portfolios.</p>
+                            </div>
+
+                            <!-- Job 4 -->
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-date">2019 - 2020</div>
+                                <h4 class="timeline-role">Front-End Developer Intern</h4>
+                                <div class="timeline-company">StartUp Hub</div>
+                                <p class="timeline-desc">Coded responsive UI components, resolved style anomalies, and
+                                    maintained legacy front-end logic assets.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Articles Section (Medium Feed) -->
+        <section class="section articles" id="articles">
+            <div class="container">
+                <div class="articles-header reveal">
+                    <div class="section-info">
+                        <h2 class="section-title">Latest Articles</h2>
+                        <p class="section-subtitle">Writing about interaction mechanics, design system logic, and modern
+                            frontend practices.</p>
+                    </div>
+
+                    <!-- Interactive Medium Username Picker -->
+                    <div class="username-picker" title="Type a Medium username and click sync">
+                        <span class="username-prefix">@</span>
+                        <input type="text" id="medium-username" class="username-input" value="medium"
+                            placeholder="username">
+                        <button class="btn-sync" id="btn-sync-medium">
+                            <i data-lucide="rotate-cw" style="width: 14px; height: 14px;"></i>
+                            Sync
+                        </button>
+                    </div>
+                </div>
+
+                <div class="articles-grid" id="articles-container">
+                    <!-- Skeletons loaded on initial load -->
+                    <div class="skeleton-card">
+                        <div class="skeleton-img"></div>
+                        <div class="skeleton-text-container">
+                            <div class="skeleton-line meta"></div>
+                            <div class="skeleton-line title"></div>
+                            <div class="skeleton-line title-short"></div>
+                            <div class="skeleton-line desc-1"></div>
+                            <div class="skeleton-line desc-2"></div>
+                            <div class="skeleton-line desc-3"></div>
+                            <div class="skeleton-line btn"></div>
+                        </div>
+                    </div>
+                    <div class="skeleton-card">
+                        <div class="skeleton-img"></div>
+                        <div class="skeleton-text-container">
+                            <div class="skeleton-line meta"></div>
+                            <div class="skeleton-line title"></div>
+                            <div class="skeleton-line title-short"></div>
+                            <div class="skeleton-line desc-1"></div>
+                            <div class="skeleton-line desc-2"></div>
+                            <div class="skeleton-line desc-3"></div>
+                            <div class="skeleton-line btn"></div>
+                        </div>
+                    </div>
+                    <div class="skeleton-card">
+                        <div class="skeleton-img"></div>
+                        <div class="skeleton-text-container">
+                            <div class="skeleton-line meta"></div>
+                            <div class="skeleton-line title"></div>
+                            <div class="skeleton-line title-short"></div>
+                            <div class="skeleton-line desc-1"></div>
+                            <div class="skeleton-line desc-2"></div>
+                            <div class="skeleton-line desc-3"></div>
+                            <div class="skeleton-line btn"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section contact" id="contact">
+            <div class="container">
+                <h2 class="section-title reveal">Get in touch!</h2>
+                <p class="section-subtitle reveal">Do you have a product idea, want to discuss a project, or need a
+                    content engineer? Drop me an email!</p>
+
+                <div class="contact-grid">
+
+                    <!-- Contact info & Socials (Left) -->
+                    <div class="contact-info-block reveal">
+                        <div class="contact-method">
+                            <div class="contact-icon-wrapper">
+                                <i data-lucide="mail"></i>
+                            </div>
+                            <div class="contact-method-detail">
+                                <h4>Email Me</h4>
+                                <p><a href="mailto:anuya.vijayan@example.com">anuya.vijayan@example.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-icon-wrapper">
+                                <i data-lucide="map-pin"></i>
+                            </div>
+                            <div class="contact-method-detail">
+                                <h4>Location</h4>
+                                <p>San Francisco Bay Area, CA</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 style="margin-bottom: 1rem;">Connect Elsewhere</h4>
+                            <div class="social-links">
+                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                                    class="social-icon" aria-label="LinkedIn profile">
+                                    <i data-lucide="linkedin"></i>
+                                </a>
+                                <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                                    class="social-icon" aria-label="GitHub profile">
+                                    <i data-lucide="github"></i>
+                                </a>
+                                <a href="https://medium.com" target="_blank" rel="noopener noreferrer"
+                                    class="social-icon" id="medium-profile-social" aria-label="Medium profile">
+                                    <i data-lucide="book-open"></i>
+                                </a>
+                                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
+                                    class="social-icon" aria-label="Twitter profile">
+                                    <i data-lucide="twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form (Right) -->
+                    <div class="reveal">
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <input type="text" id="name" class="form-input" placeholder=" " required>
+                                <label for="name" class="form-label">Your name</label>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" id="email" class="form-input" placeholder=" " required>
+                                <label for="email" class="form-label">Your email</label>
+                            </div>
+
+                            <div class="form-group">
+                                <textarea id="message" class="form-input" placeholder=" " required></textarea>
+                                <label for="message" class="form-label">Write your message here...</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="align-self: flex-start;">
+                                Send email
+                                <i data-lucide="send"></i>
+                            </button>
+
+                            <div class="form-status" id="formStatus"></div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-copyright">
+                &copy; <span id="current-year">2026</span> Anuya Vijayan. All rights reserved.
+            </div>
+
+            <div class="footer-links">
+                <a href="https://medium.com" target="_blank" rel="noopener noreferrer" class="footer-link"
+                    id="medium-profile-footer">
+                    Medium Profile
+                </a>
+            </div>
+
+            <div class="footer-socials">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon"
+                    aria-label="LinkedIn">
+                    <i data-lucide="linkedin" style="width: 18px; height: 18px;"></i>
+                </a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon"
+                    aria-label="GitHub">
+                    <i data-lucide="github" style="width: 18px; height: 18px;"></i>
+                </a>
+                <a href="https://medium.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon"
+                    id="medium-profile-icon" aria-label="Medium">
+                    <i data-lucide="book-open" style="width: 18px; height: 18px;"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon"
+                    aria-label="Twitter">
+                    <i data-lucide="twitter" style="width: 18px; height: 18px;"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="btn-scroll-top" id="btnScrollTop" aria-label="Scroll back to top">
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+    <!-- Interactive Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Lucide Icons
+            lucide.createIcons();
+
+            // Set Current Year in Footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Navigation Toggle (Mobile)
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const mobileNav = document.querySelector('#mobile-nav');
+
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileNav.classList.toggle('open');
+                const isOpen = mobileNav.classList.contains('open');
+
+                // Update icon dynamically
+                if (isOpen) {
+                    mobileMenuToggle.innerHTML = '<i data-lucide="x"></i>';
+                } else {
+                    mobileMenuToggle.innerHTML = '<i data-lucide="menu"></i>';
+                }
+                lucide.createIcons();
+            });
+
+            // Close mobile menu when nav link clicked
+            const mobileLinks = document.querySelectorAll('.mobile-nav-item');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileNav.classList.remove('open');
+                    mobileMenuToggle.innerHTML = '<i data-lucide="menu"></i>';
+                    lucide.createIcons();
+                });
+            });
+
+            // Scroll effect for Navbar & Scroll Top Button
+            const navbar = document.getElementById('navbar');
+            const btnScrollTop = document.getElementById('btnScrollTop');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+
+                if (window.scrollY > 500) {
+                    btnScrollTop.classList.add('visible');
+                } else {
+                    btnScrollTop.classList.remove('visible');
+                }
+            });
+
+            // Back to Top Click
+            btnScrollTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Scroll Spy & Active Nav Class
+            const sections = document.querySelectorAll('section');
+            const navItems = document.querySelectorAll('.nav-link-item');
+            const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (window.scrollY >= sectionTop - 120) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                    if (item.getAttribute('href').slice(1) === current) {
+                        item.classList.add('active');
+                    }
+                });
+
+                mobileNavItems.forEach(item => {
+                    item.classList.remove('active');
+                    if (item.getAttribute('href').slice(1) === current) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+
+            // Scroll-reveal Intersection Observer
+            const reveals = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            reveals.forEach(reveal => {
+                revealObserver.observe(reveal);
+            });
+
+            // Contact Form Handling (Dynamic Mock Submission)
+            const contactForm = document.getElementById('contactForm');
+            const formStatus = document.getElementById('formStatus');
+
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const btnSubmit = contactForm.querySelector('button[type="submit"]');
+                const btnContent = btnSubmit.innerHTML;
+
+                // Simple Visual State change
+                btnSubmit.disabled = true;
+                btnSubmit.innerHTML = 'Sending... <i data-lucide="loader" class="animate-spin"></i>';
+                lucide.createIcons();
+
+                setTimeout(() => {
+                    // Simulate Success
+                    formStatus.className = 'form-status success';
+                    formStatus.textContent = 'Thank you! Your message has been sent successfully.';
+                    contactForm.reset();
+
+                    // Restore button state
+                    btnSubmit.disabled = false;
+                    btnSubmit.innerHTML = btnContent;
+                    lucide.createIcons();
+
+                    // Hide status after a few seconds
+                    setTimeout(() => {
+                        formStatus.style.display = 'none';
+                    }, 5000);
+                }, 1500);
+            });
+
+            // Medium RSS Fetcher Setup
+            const mediumInput = document.getElementById('medium-username');
+            const btnSync = document.getElementById('btn-sync-medium');
+            const articlesContainer = document.getElementById('articles-container');
+
+            // Update footer & profile links dynamically
+            function updateProfileLinks(username) {
+                const cleanUsername = username.trim().replace('@', '');
+                const profileUrl = `https://medium.com/@${cleanUsername}`;
+
+                // Update href fields
+                document.getElementById('medium-profile-social').href = profileUrl;
+                document.getElementById('medium-profile-footer').href = profileUrl;
+                document.getElementById('medium-profile-icon').href = profileUrl;
+            }
+
+            // Fetch Medium Feed
+            async function fetchMediumFeed() {
+                let username = mediumInput.value.trim();
+                if (!username) {
+                    username = 'medium'; // Default fallback username
+                }
+
+                // Strip leading @ just in case
+                const cleanUsername = username.replace('@', '');
+                updateProfileLinks(cleanUsername);
+
+                // Show Skeletons
+                articlesContainer.innerHTML = `
+                    <div class="skeleton-card">
+                        <div class="skeleton-img"></div>
+                        <div class="skeleton-text-container">
+                            <div class="skeleton-line meta"></div>
+                            <div class="skeleton-line title"></div>
+                            <div class="skeleton-line title-short"></div>
+                            <div class="skeleton-line desc-1"></div>
+                            <div class="skeleton-line desc-2"></div>
+                            <div class="skeleton-line desc-3"></div>
+                            <div class="skeleton-line btn"></div>
+                        </div>
+                    </div>
+                    <div class="skeleton-card">
+                        <div class="skeleton-img"></div>
+                        <div class="skeleton-text-container">
+                            <div class="skeleton-line meta"></div>
+                            <div class="skeleton-line title"></div>
+                            <div class="skeleton-line title-short"></div>
+                            <div class="skeleton-line desc-1"></div>
+                            <div class="skeleton-line desc-2"></div>
+                            <div class="skeleton-line desc-3"></div>
+                            <div class="skeleton-line btn"></div>
+                        </div>
+                    </div>
+                    <div class="skeleton-card">
+                        <div class="skeleton-img"></div>
+                        <div class="skeleton-text-container">
+                            <div class="skeleton-line meta"></div>
+                            <div class="skeleton-line title"></div>
+                            <div class="skeleton-line title-short"></div>
+                            <div class="skeleton-line desc-1"></div>
+                            <div class="skeleton-line desc-2"></div>
+                            <div class="skeleton-line desc-3"></div>
+                            <div class="skeleton-line btn"></div>
+                        </div>
+                    </div>
+                `;
+
+                const rssUrl = `https://medium.com/feed/@${cleanUsername}`;
+                const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+
+                try {
+                    const response = await fetch(apiUrl);
+                    if (!response.ok) throw new Error('Network response error');
+
+                    const data = await response.json();
+
+                    if (data.status !== 'ok' || !data.items || data.items.length === 0) {
+                        throw new Error('Invalid RSS response');
+                    }
+
+                    // Render feed items (Latest 6 posts)
+                    articlesContainer.innerHTML = '';
+                    const items = data.items.slice(0, 6);
+
+                    items.forEach((item, index) => {
+                        // Extract content text to generate clean description and read time
+                        const div = document.createElement('div');
+                        div.innerHTML = item.content || item.description || '';
+                        const textContent = div.textContent || div.innerText || '';
+
+                        // Excerpt (150 characters)
+                        let excerpt = textContent.trim().substring(0, 150);
+                        if (textContent.length > 150) excerpt += '...';
+                        if (!excerpt) excerpt = 'Click the link below to read the full story directly on Medium.';
+
+                        // Estimated Read Time
+                        const wordCount = textContent.split(/\s+/).length;
+                        const readTime = Math.max(1, Math.ceil(wordCount / 225)); // 225 wpm average
+
+                        // Date Format (Month DD, YYYY)
+                        const pubDate = new Date(item.pubDate);
+                        const formattedDate = pubDate.toLocaleDateString('en-US', {
+                            month: 'long',
+                            day: 'numeric',
+                            year: 'numeric'
+                        });
+
+                        // Image Thumbnail Fallback if none found
+                        let thumbnail = item.thumbnail;
+                        if (!thumbnail) {
+                            // Try to parse img tag from content
+                            const firstImg = div.querySelector('img');
+                            thumbnail = firstImg ? firstImg.src : 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=600&auto=format&fit=crop';
+                        }
+
+                        // Create article element
+                        const card = document.createElement('div');
+                        card.className = 'article-card';
+                        card.style.animationDelay = `${index * 0.1}s`;
+                        card.innerHTML = `
+                            <div class="article-thumb-container">
+                                <img src="${thumbnail}" alt="${item.title}" class="article-thumb" onerror="this.src='https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=600&auto=format&fit=crop'">
+                            </div>
+                            <div class="article-content">
+                                <div class="article-meta">
+                                    <span>${formattedDate}</span>
+                                    <span class="article-date-dot"></span>
+                                    <span>${readTime} min read</span>
+                                </div>
+                                <h3 class="article-title">${item.title}</h3>
+                                <p class="article-excerpt">${excerpt}</p>
+                                <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-text" style="align-self: flex-start; margin-top: auto; border: none; padding: 0;">
+                                    Read on Medium
+                                    <i data-lucide="arrow-up-right"></i>
+                                </a>
+                            </div>
+                        `;
+
+                        articlesContainer.appendChild(card);
+                    });
+
+                    lucide.createIcons();
+
+                } catch (error) {
+                    console.error('Error fetching RSS:', error);
+                    // Graceful Fallback message
+                    articlesContainer.innerHTML = `
+                        <div class="fallback-message">
+                            <div class="contact-icon-wrapper" style="margin-bottom: 1rem; width: 56px; height: 56px;">
+                                <i data-lucide="alert-triangle" style="width: 28px; height: 28px;"></i>
+                            </div>
+                            <h4>Articles coming soon — visit my Medium profile.</h4>
+                            <p>We encountered a problem fetching articles for "@${cleanUsername}". Check the username or view my profile on Medium directly.</p>
+                            <a href="https://medium.com/@${cleanUsername}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                Visit Medium Profile
+                                <i data-lucide="arrow-up-right"></i>
+                            </a>
+                        </div>
+                    `;
+                    lucide.createIcons();
+                }
+            }
+
+            // Bind RSS click event
+            btnSync.addEventListener('click', fetchMediumFeed);
+            mediumInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') fetchMediumFeed();
+            });
+
+            // Initial load of Medium feed
+            fetchMediumFeed();
+        });
+    </script>
+</body>
+
+</html>
